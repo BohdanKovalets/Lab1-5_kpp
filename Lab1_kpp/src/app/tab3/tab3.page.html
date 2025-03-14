@@ -1,0 +1,43 @@
+<app-my-header name="Лабораторна робота №1"></app-my-header>
+<ion-content [fullscreen]="true">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Завдання №3</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Згенерувати матрицю розміром NxN. Виокремити за допомогою кольору всі
+        елементи головної діагоналі, якщо вони парні.
+      </p>
+
+      <ion-item>
+        <ion-input
+          label="Розмірність матриці (N)"
+          labelPlacement="stacked"
+          type="number"
+          id="n"
+          value="3"
+          #Inputn
+        ></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="arraycalc(Inputn.value)">
+        Розрахунок
+      </ion-button>
+
+      <ion-item>
+        <ion-grid>
+          <ion-row class="matrix-row" *ngFor="let row of a; let i = index">
+            <ion-col
+              *ngFor="let cell of row; let j = index"
+              [ngStyle]="{ backgroundColor: getColor(i, j) }"
+              class="matrix-cell"
+            >
+              {{ cell }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

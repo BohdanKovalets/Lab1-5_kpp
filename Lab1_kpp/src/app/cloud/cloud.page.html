@@ -1,0 +1,36 @@
+<app-my-header name="Лабораторна робота №2"></app-my-header>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Перелік товарів</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <div
+      *ngFor="let category of getGroupedByCategory() | keyvalue; trackBy: trackByCategory"
+    >
+      <ion-item>
+        <ion-toolbar color="warning">
+          <ion-title>{{ category.key }}</ion-title>
+        </ion-toolbar>
+      </ion-item>
+
+      <div *ngFor="let product of category.value; trackBy: trackByProduct">
+        <ion-item>
+          <ion-label>
+            <h3>{{ product.name }}</h3>
+            <p>Одиниця виміру: {{ product.unit }}</p>
+            <p>Ціна за одиницю: {{ product.pricePerUnit | currency }}</p>
+            <p>Кількість на складі: {{ product.stock }}</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </div>
+  </ion-list>
+
+  <div class="chart-container">
+    <canvas #lineCanvas></canvas>
+  </div>
+</ion-content>

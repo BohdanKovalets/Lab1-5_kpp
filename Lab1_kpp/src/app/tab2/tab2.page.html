@@ -1,0 +1,42 @@
+<app-my-header name="Лабораторна робота №1"></app-my-header>
+<ion-content [fullscreen]="true">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Завдання №2</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        На заданому проміжку чисел [a, b] знайдіть кількість чисел, які при
+        діленні на 6 дають в остачі 3.
+      </p>
+      <ion-item>
+        <ion-input
+          label="Початок проміжку (a)"
+          labelPlacement="stacked"
+          type="number"
+          #Inputa
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Кінець проміжку (b)"
+          labelPlacement="stacked"
+          type="number"
+          #Inputb
+        ></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="calculate(Inputa.value, Inputb.value)"
+        >Розрахунок</ion-button
+      >
+
+      <ion-item>
+        <p>Кількість знайдених чисел: {{count}}</p>
+      </ion-item>
+      <ion-item>
+        <p>Самі числа: {{numbers.join(', ')}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
