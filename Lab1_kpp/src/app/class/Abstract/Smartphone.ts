@@ -1,11 +1,14 @@
 import { MobileDevice } from "./MobileDevice";
 
 export class Smartphone extends MobileDevice {
-  type: string;
-
-  constructor(brand: string, batteryCapacity: number, weight: number, public cameraResolution: number) {
+  constructor(
+    public type: string, 
+    brand: string,
+    batteryCapacity: number,
+    weight: number,
+    public cameraResolution: number
+  ) {
     super(brand, batteryCapacity, weight);
-    this.type = "Смартфон"; 
   }
 
   displayInfo(): string {
