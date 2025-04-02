@@ -1,0 +1,33 @@
+<app-my-header name="Лабораторна робота №3"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Скласти програму з абстрактним батьківським класом і двома
+        об'єктами-нащадками. Реалізувати циклічне виведення параметрів об'єктів,
+        використовуючи поліморфний контейнер - масив об'єктів базового класу.
+        <br />
+        Знайти три пристрою з найбільшою ємністю батареї.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Результати</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item
+        *ngFor="let item of mobileDevices"
+        class="box"
+        [style.background-color]="getColor(item.getBatteryCapacity())"
+      >
+        <div [innerHTML]="item.displayInfo()"></div>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
