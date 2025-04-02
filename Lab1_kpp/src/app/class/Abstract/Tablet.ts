@@ -1,15 +1,20 @@
 import { MobileDevice } from "./MobileDevice";
 
 export class Tablet extends MobileDevice {
-    screenSize: number;
+  type: string;
 
-    constructor(brand: string, batteryCapacity: number, weight: number, screenSize: number) {
-        super(brand, batteryCapacity, weight);
-        if (screenSize <= 0) throw new Error('Screen size must be positive');
-        this.screenSize = screenSize;
-    }
+  constructor(brand: string, batteryCapacity: number, weight: number, public screenSize: number) {
+    super(brand, batteryCapacity, weight);
+    this.type = "Планшет"; 
+  }
 
-    displayInfo(): string {
-        return `Бренд: ${this.brand}<br>Ємність батареї: ${this.batteryCapacity} мАг<br>Вага: ${this.weight} г<br>Розмір екрану: ${this.screenSize} дюймів`;
-    }
+  displayInfo(): string {
+    return `
+      <strong>Тип:</strong> ${this.type} <br>
+      <strong>Бренд:</strong> ${this.brand} <br>
+      <strong>Ємність батареї:</strong> ${this.batteryCapacity} мАг <br>
+      <strong>Вага:</strong> ${this.weight} г <br>
+      <strong>Розмір екрану:</strong> ${this.screenSize} дюймів
+    `;
+  }
 }

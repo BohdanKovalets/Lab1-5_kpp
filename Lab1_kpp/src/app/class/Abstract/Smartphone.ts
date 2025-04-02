@@ -1,15 +1,20 @@
 import { MobileDevice } from "./MobileDevice";
 
 export class Smartphone extends MobileDevice {
-    cameraResolution: number;
+  type: string;
 
-    constructor(brand: string, batteryCapacity: number, weight: number, cameraResolution: number) {
-        super(brand, batteryCapacity, weight);
-        if (cameraResolution <= 0) throw new Error('Camera resolution must be positive');
-        this.cameraResolution = cameraResolution;
-    }
+  constructor(brand: string, batteryCapacity: number, weight: number, public cameraResolution: number) {
+    super(brand, batteryCapacity, weight);
+    this.type = "Смартфон"; 
+  }
 
-    displayInfo(): string {
-        return `Бренд: ${this.brand}<br>Ємність батареї: ${this.batteryCapacity} мАг<br>Вага: ${this.weight} г<br>Роздільна здатність камери: ${this.cameraResolution} МП`;
-    }
+  displayInfo(): string {
+    return `
+      <strong>Тип:</strong> ${this.type} <br>
+      <strong>Бренд:</strong> ${this.brand} <br>
+      <strong>Ємність батареї:</strong> ${this.batteryCapacity} мАг <br>
+      <strong>Вага:</strong> ${this.weight} г <br>
+      <strong>Роздільна здатність камери:</strong> ${this.cameraResolution} Мп
+    `;
+  }
 }
