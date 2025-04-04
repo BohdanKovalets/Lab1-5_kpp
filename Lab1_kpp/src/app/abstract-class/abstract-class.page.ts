@@ -43,7 +43,7 @@ export class AbstractClassPage implements OnInit {
             item['brand'],
             item['batteryCapacity'],
             item['weight'],
-            item['cameraResolution'] || item['screenSize']
+            item['cameraResolution'] || item['screenSize'] || item['ramSize']
           );
           device.displayInfo();
           this.mobileDevices.push(device);
