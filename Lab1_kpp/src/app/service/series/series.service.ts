@@ -19,7 +19,7 @@ export class SeriesService {
     return sum;
   }
 
-  getTab(xn: number = 0.1, xk: number = 3.14, h: number = 0.1) {
+  getTab(xn: number = 0.1, xk: number = 0.99, h: number = 0.2) {
     this.xy.clear();
     let x = xn;
     while (x <= xk + 1e-10) {

@@ -16,7 +16,7 @@ export class RecursionService {
     return this.computeRecursive(x, n + 1, sum + term);
   }
 
-  getTab(xn: number = 0.1, xk: number = 3.14, h: number = 0.1): Map<string, number> {
+  getTab(xn: number = 0.1, xk: number = 0.99, h: number = 0.2): Map<string, number> { 
     this.xy.clear();
     let x = xn;
     while (x <= xk + 1e-10) {

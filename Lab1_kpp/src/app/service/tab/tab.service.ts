@@ -10,7 +10,7 @@ export class TabService {
 
   constructor(@Optional() private log: LogService) {}
 
-  getTab(xn: number = 0.1, xk: number = 3.14, h: number = 0.1) {
+  getTab(xn: number = 0.1, xk: number = 0.99, h: number = 0.2) { 
     this.xx = [];
     this.yy = [];
 
